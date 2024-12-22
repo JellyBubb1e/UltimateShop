@@ -32,6 +32,8 @@ public class ObjectUseTimesCache {
 
     private final ServerCache cache;
 
+    private final boolean firstInsert;
+
     public ObjectUseTimesCache(ServerCache cache,
                                int buyUseTimes,
                                int sellUseTimes,
@@ -39,7 +41,9 @@ public class ObjectUseTimesCache {
                                String lastSellTime,
                                String cooldownBuyTime,
                                String cooldownSellTime,
-                               ObjectItem product) {
+                               ObjectItem product,
+                               boolean firstInsert) {
+        this.firstInsert = firstInsert;
         this.cache = cache;
         this.buyUseTimes = buyUseTimes;
         if (lastBuyTime != null) {
@@ -78,6 +82,10 @@ public class ObjectUseTimesCache {
     }
 
     public void setBuyUseTimes(int i, boolean notUseBungee) {
+        if (i > Integer.MAX_VALUE - 10000) {
+            setSellUseTimes(0);
+            setBuyUseTimes(i - sellUseTimes);
+        }
         buyUseTimes = i;
         if (!notUseBungee && cache.server && BungeeCordManager.bungeeCordManager != null) {
             BungeeCordManager.bungeeCordManager.sendToOtherServer(
@@ -93,6 +101,10 @@ public class ObjectUseTimesCache {
     }
 
     public void setSellUseTimes(int i, boolean notUseBungee) {
+        if (i > Integer.MAX_VALUE - 10000) {
+            setBuyUseTimes(0);
+            setSellUseTimes(i - buyUseTimes);
+        }
         sellUseTimes = i;
         if (!notUseBungee && cache.server && BungeeCordManager.bungeeCordManager != null) {
             BungeeCordManager.bungeeCordManager.sendToOtherServer(
@@ -436,5 +448,9 @@ public class ObjectUseTimesCache {
             setLastBuyTime(null);
             resetCooldownBuyTime();
         }
+    }
+
+    public boolean isFirstInsert() {
+        return firstInsert;
     }
 }
