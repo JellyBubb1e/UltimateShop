@@ -145,7 +145,7 @@
             <artifactId>ManyouItems</artifactId>
             <version>1.0.0</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/lib/ManyouItems-1.0.0.jar</systemPath>
+            <systemPath>${GITHUB_WORKSPACE}/lib/ManyouItems-1.0.0.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>io.papermc.paper</groupId>
@@ -224,7 +224,7 @@
             <artifactId>AdvancedEnchantments</artifactId>
             <version>1.0.0</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/lib/AdvancedEnchantmentsAPI.jar</systemPath>
+            <systemPath>${GITHUB_WORKSPACE}/lib/AdvancedEnchantmentsAPI.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>net.luckperms</groupId>
@@ -333,7 +333,7 @@
             <artifactId>RoyaleEconomyAPI</artifactId>
             <version>1.0.0</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/lib/RoyaleEconomyAPI.jar</systemPath>
+            <systemPath>${GITHUB_WORKSPACE}/lib/RoyaleEconomyAPI.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>com.github.Redempt</groupId>
@@ -352,14 +352,14 @@
             <artifactId>SCore</artifactId>
             <version>5.24.7.8</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/lib/SCore-5.24.7.9.jar</systemPath>
+            <systemPath>${GITHUB_WORKSPACE}/lib/SCore-5.24.7.9.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>com.ssomar.score</groupId>
             <artifactId>ExecutableItems</artifactId>
             <version>7.24.7.9</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/lib/ExecutableItems-7.24.7.9.jar</systemPath>
+            <systemPath>${GITHUB_WORKSPACE}/lib/ExecutableItems-7.24.7.9.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>org.json</groupId>
@@ -371,14 +371,14 @@
             <artifactId>MythicChanger</artifactId>
             <version>1.6.9</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/lib/MythicChanger-1.6.9.jar</systemPath>
+            <systemPath>${GITHUB_WORKSPACE}/lib/MythicChanger-1.6.9.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>com.nexomc</groupId>
             <artifactId>nexo</artifactId>
             <version>0.5.0</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/lib/nexo-0.5.0-dev.jar</systemPath>
+            <systemPath>${GITHUB_WORKSPACE}/lib/nexo-0.5.0-dev.jar</systemPath>
         </dependency>
     </dependencies>
 </project>
